@@ -1,4 +1,4 @@
-import java.util.EmptyStackException;
+import java.io.IOException;
 import java.util.Stack;
 
 
@@ -13,10 +13,19 @@ public class CustomStack {
             while (!stack.isEmpty()) {
                 System.out.println("Извлекаем: " + stack.pop());
             }
-            stack.pop(); // Попытка извлечь элемент из пустого стека
-        } catch (EmptyStackException e) {
+            System.out.println(CustomEmptyStack(stack));
+
+        } catch (CustomEmptyStackException e) {
             System.out.println("Ошибка: попытка извлечь элемент из пустого стека");
             e.printStackTrace();
         }
+    }
+
+    public static Object CustomEmptyStack(Stack<Object> stack) throws CustomEmptyStackException {
+
+        if (stack.isEmpty()){
+            throw new CustomEmptyStackException("Попытка извлечь элемент из пустого стека");
+        }
+        return stack.pop(); // Попытка извлечь элемент из пустого стека
     }
 }
