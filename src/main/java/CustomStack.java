@@ -16,7 +16,6 @@ public class CustomStack {
 
         } catch (CustomEmptyStackException e) {
             System.out.println("Ошибка: попытка извлечь элемент из пустого стека");
-            e.printStackTrace();
         }
     }
 
