@@ -33,7 +33,6 @@ public class CustomStack {
     private static void logException(Exception e) {
         try (FileWriter writer = new FileWriter("exceptions.log", true)) { // true для добавления в конец файла
             writer.write(e.getMessage() + "\n");
-            System.out.println(1);
         } catch (IOException ioException) {
             System.err.println("Не удалось записать в файл: " + ioException.getMessage());
         }
